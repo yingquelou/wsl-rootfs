@@ -1,0 +1,9 @@
+services:
+  alpine:
+    build:
+      context: .
+      dockerfile: Dockerfile.alpine
+    labels:
+      - org.opencontainers.image.source=https://github.com/yingquelou/wsl-rootfs
+    image: ghcr.io/yingquelou/wsl:alpine
+    container_name: wsl-alpine
