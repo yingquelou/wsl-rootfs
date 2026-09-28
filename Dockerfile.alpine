@@ -1,0 +1,18 @@
+# syntax=docker/dockerfile:1
+FROM alpine:3.24.2
+
+RUN cat > /etc/wsl.conf <<'EOF'
+[interop]
+enabled = false
+appendWindowsPath = false
+EOF
+RUN cat > /etc/wsl-distribution.conf <<'EOF'
+[oobe]
+defaultName = alpine-3.24.2
+
+[shortcut]
+icon = /usr/share/wsl/alpine.ico
+EOF
+ADD alpine.ico /usr/share/wsl/
+# What the container should run when it is started.
+ENTRYPOINT sh

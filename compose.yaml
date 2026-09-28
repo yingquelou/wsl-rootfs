@@ -1,0 +1,54 @@
+services:
+  alpine-3.24.2:
+    build:
+      context: .
+      dockerfile: Dockerfile.alpine
+    labels:
+      - org.opencontainers.image.source=https://github.com/yingquelou/wsl-rootfs
+    image: ghcr.io/yingquelou/alpine:3.24.2
+    container_name: alpine-3.24.2
+    platform: linux/x86_64
+  ubuntu-22.04.5:
+    build:
+      context: .
+      dockerfile: Dockerfile.ubuntu
+      target: ubuntu-22
+    image: ghcr.io/yingquelou/ubuntu:22.04.5
+    entrypoint: bash
+    container_name: ubuntu-22.04.5
+    platform: linux/amd64
+    labels:
+      - org.opencontainers.image.source=https://github.com/yingquelou/wsl-rootfs
+  ubuntu-24.04.5:
+    build:
+      context: .
+      dockerfile: Dockerfile.ubuntu
+      target: ubuntu-24
+    image: ghcr.io/yingquelou/ubuntu:24.04.5 
+    entrypoint: bash
+    container_name: ubuntu-24.04.5 
+    platform: linux/amd64
+    labels:
+      - org.opencontainers.image.source=https://github.com/yingquelou/wsl-rootfs
+  ubuntu-26.04.1:
+    build:
+      context: .
+      dockerfile: Dockerfile.ubuntu
+      target: ubuntu-26
+    image: ghcr.io/yingquelou/ubuntu:26.04.1
+    entrypoint: bash
+    container_name: ubuntu-26.04.1
+    platform: linux/amd64
+    labels:
+      - org.opencontainers.image.source=https://github.com/yingquelou/wsl-rootfs
+  deepin-25:
+    build:
+      context: .
+      dockerfile: Dockerfile.deepin
+      target: deepin-25
+    image: ghcr.io/yingquelou/deepin:25
+    entrypoint: bash
+    container_name: deepin-25
+    platform: linux/amd64
+    labels:
+      - org.opencontainers.image.source=https://github.com/yingquelou/wsl-rootfs

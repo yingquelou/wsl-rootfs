@@ -1,0 +1,2 @@
+# syntax=docker/dockerfile:1
+FROM deepin:25 AS deepin-25
